@@ -1,6 +1,10 @@
-#include<iostream>
-//write include statements
+#include <iostream>;
+#include "decisions.cpp"
+#include "decisions.h"
 
+//write include statements
+using std::cout;
+using std::cin;
 /*
 In main write code to capture a letter_grade and credit_hours from the keyboard:
 
@@ -21,9 +25,34 @@ Display:
 GPA 3.0
 
 */
+
 int main() 
 {
-	std::cout << "Hello" ;
+	std::string letter_grade;
+	int credit_hours;
+
+	double credit_points =+ get_grade_points(letter_grade);
+	int credit_hours =+ credit_hours;
+
+	cout << "Enter your letter grade: ";
+	cin >> letter_grade;
+	//grade = get_grade_points(letter_grade);
+	cout << "Enter your credit hours: ";
+	cin >> credit_hours;
+
+	cout << "Enter your letter grade: ";
+	cin >> letter_grade;
+	//grade = get_grade_points(letter_grade);
+	cout << "Enter your credit hours: ";
+	cin >> credit_hours;
+
+	cout << "Enter your letter grade: ";
+	cin >> letter_grade;
+	//grade = get_grade_points(letter_grade);
+	cout << "Enter your credit hours: ";
+	cin >> credit_hours;
+
+	cout << "Your GPA is " << calculate_gpa << ".";
 
 	return 0;
 }
