@@ -1,5 +1,4 @@
-#include <iostream>;
-#include "decisions.cpp"
+#include <iostream>
 #include "decisions.h"
 
 //write include statements
@@ -29,30 +28,43 @@ GPA 3.0
 int main() 
 {
 	std::string letter_grade;
-	int credit_hours;
+	int hours = 0;
 
-	double credit_points =+ get_grade_points(letter_grade);
-	int credit_hours =+ credit_hours;
 
-	cout << "Enter your letter grade: ";
+	cout << "Enter your first letter grade: ";
 	cin >> letter_grade;
-	//grade = get_grade_points(letter_grade);
-	cout << "Enter your credit hours: ";
-	cin >> credit_hours;
+	cout << "Enter your first credit hours: ";
+	cin >> hours;
 
-	cout << "Enter your letter grade: ";
+	int points1 = get_grade_points(letter_grade) * hours;
+	int hours1 = hours;
+
+
+	cout << "\nEnter your second letter grade: ";
 	cin >> letter_grade;
-	//grade = get_grade_points(letter_grade);
-	cout << "Enter your credit hours: ";
-	cin >> credit_hours;
+	cout << "Enter your second credit hours: ";
+	cin >> hours;
 
-	cout << "Enter your letter grade: ";
+	int points2 = get_grade_points(letter_grade) * hours;
+	int hours2 = hours;
+
+
+	cout << "\nEnter your third letter grade: ";
 	cin >> letter_grade;
-	//grade = get_grade_points(letter_grade);
-	cout << "Enter your credit hours: ";
-	cin >> credit_hours;
+	cout << "Enter your third credit hours: ";
+	cin >> hours;
 
-	cout << "Your GPA is " << calculate_gpa << ".";
+	int points3 = get_grade_points(letter_grade) * hours;
+	int hours3 = hours;
+	
+
+	double credit_points = points1 + points2 + points3;
+	cout << "\nTotal credit points: " << credit_points;
+	int credit_hours = hours1 + hours2 + hours3;
+	cout << "\nTotal credit hours: " << credit_hours;
+
+
+	cout << "\nYour GPA is " << calculate_gpa(credit_hours, credit_points);
 
 	return 0;
 }
