@@ -27,7 +27,7 @@ include_directories(homework/02_decisions)
 add_subdirectory(01-basics)
 add_subdirectory(01-basics_test)
 add_subdirectory(classwork)
-add_subdirectory(examples)
+#add_subdirectory(examples)
 add_subdirectory(homework)
 
 

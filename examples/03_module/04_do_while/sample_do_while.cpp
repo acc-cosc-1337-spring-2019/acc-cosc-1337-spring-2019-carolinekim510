@@ -9,18 +9,19 @@ using std::cin;
 //user opts not to continue.  
 void prompt_user()
 {
-	int choice;
+	char choice;
+
 	do
 	{
 		cout << "Enter 1 to continue: ";
 		cin >> choice;
-		cout << menu_option(option);
+		cout << menu_option(choice);
 
 		cout << "Continues? y or n";
 		cin >> choice;
 
 
-	} while (choice == 'y' || choice == "Y");
+	} while (choice == 'y' || choice == 'Y');
 }
 
 
