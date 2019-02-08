@@ -7,6 +7,8 @@ using std::cin;
 
 //Write code for void function prompt_user to loop until
 //user opts not to continue.  
+
+
 void prompt_user()
 {
 	char choice;
@@ -29,24 +31,24 @@ void prompt_user()
 
 //Write code for function run_menu that prompts  user for a 
 //number from 1 to 4 and displays the option user selected.
-/*
-Use the existing menu_option function from /example/01_module/07_switch
+
+/* Use the existing menu_option function from /example/01_module/07_switch
 folder.
 
 */
 
-void run_menu()
+/* void run_menu()
 {
 	int option;
-	char choice;
-
+	
 	do
 	{
 		cout << "Enter number from 1 to 4: ";
 		cin >> option;
 		cout << menu_option(option);
 
-	} while ();
-}
+	} while (option == 'y' || option == 'Y');
+
+} */
 
 

@@ -2,7 +2,6 @@
 
 int main() 
 {
-	//prompt_user();
-	run_menu();
-	return 0;
+	prompt_user();
+	//run_menu();
 }
