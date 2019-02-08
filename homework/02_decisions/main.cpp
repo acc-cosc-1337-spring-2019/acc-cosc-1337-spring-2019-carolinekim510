@@ -59,9 +59,7 @@ int main()
 	
 
 	double credit_points = points1 + points2 + points3;
-	cout << "\nTotal credit points: " << credit_points;
 	int credit_hours = hours1 + hours2 + hours3;
-	cout << "\nTotal credit hours: " << credit_hours;
 
 
 	cout << "\nYour GPA is " << calculate_gpa(credit_hours, credit_points);

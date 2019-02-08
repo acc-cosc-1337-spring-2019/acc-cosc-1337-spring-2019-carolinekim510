@@ -2,6 +2,7 @@
 
 int main() 
 {
-	display_numbers(5);
+	int num = 5;
+	display_numbers(num);
 	return 0;
 }
