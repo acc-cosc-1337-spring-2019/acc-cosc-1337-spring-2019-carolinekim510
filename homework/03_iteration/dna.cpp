@@ -9,25 +9,21 @@ Calculate GC content:
 Iterate string count Gs and Cs, divide count by string length.
 Return quotient.
 */
+
 double get_gc_content(string dna)
 {
-	auto getContent = 0;
+	double count = 0;
 
-	for (unsigned i = 0; i < dna.length(); i++)
+	for (int i = 0; i < dna.length(); i++)
 	{
-		if (dna.at(i) == 'G' || dna.at(i) == 'g')
+		if (dna[i] == 'G' || dna[i] == 'C')
 		{
-			getContent++;
-		}
-		else if (dna.at(i) == 'C' || dna.at(i) == 'c')
-		{
-			getContent++;
-		}
+			count++;
+		}		
 	}
 	
-	double calculateGc = (getContent / dna.length()) * 100;
-	
-	return calculateGc;
+	double quotient = count / dna.length();
+	return quotient;
 }
 
 
@@ -36,6 +32,12 @@ Write code for function get_reverse_string that
 accepts a string parameter and returns a string reversed.
 */
 
+string get_reverse_string(string dna)
+{
+	string reverseString = string(dna.rbegin(), dna.rend());
+	return reverseString;
+
+}
 
 /*
 Write prototype for function get_dna_complement that
@@ -47,3 +49,34 @@ b. iterate local string variable and
 c. return string
 
 */
+
+
+
+string get_dna_complement(string dna)
+{
+	string dnaString = get_reverse_string(dna);
+
+	for (auto& c: dnaString)
+	{
+		if (c == 'A')
+		{
+			c = 'T';
+		}
+		else if (c == 'T')
+		{
+			c = 'A';
+		}
+		else if (c == 'G')
+		{
+			c = 'C';
+		}
+		else if (c == 'C')
+		{
+			c = 'G';
+		}
+
+	}
+
+	return dnaString;
+}
+
