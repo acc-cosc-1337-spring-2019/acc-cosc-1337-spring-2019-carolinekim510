@@ -1,3 +1,8 @@
+#include <iostream>
+#include "dna.h"
+
+using std::cout;
+using std::cin;
 /*
 Write code that prompts user to enter 1 for Get GC Content, 
 or 2 for Get DNA Complement.  The program will prompt user for a 
@@ -7,5 +12,7 @@ user enters a y or Y.
 */
 int main() 
 {
+
 	return 0;
+
 }

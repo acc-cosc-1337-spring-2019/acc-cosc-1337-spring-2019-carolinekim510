@@ -1,3 +1,7 @@
+#include "dna.h"
+
+using std::string;
+
 /*
 Write code for function get_gc_content that accepts
 a const reference string parameter and returns a double.
@@ -5,6 +9,26 @@ Calculate GC content:
 Iterate string count Gs and Cs, divide count by string length.
 Return quotient.
 */
+double get_gc_content(string dna)
+{
+	auto getContent = 0;
+
+	for (unsigned i = 0; i < dna.length(); i++)
+	{
+		if (dna.at(i) == 'G' || dna.at(i) == 'g')
+		{
+			getContent++;
+		}
+		else if (dna.at(i) == 'C' || dna.at(i) == 'c')
+		{
+			getContent++;
+		}
+	}
+	
+	double calculateGc = (getContent / dna.length()) * 100;
+	
+	return calculateGc;
+}
 
 
 /*
