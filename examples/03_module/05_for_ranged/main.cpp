@@ -6,6 +6,9 @@ int main()
 {
 	//call count letters function
 	//loop_string_w_index("john");
-	loop_string_w_auto("john");
+	//loop_vector_w_index();
+	//loop_string_w_auto("john");
+	loop_vector_w_auto();
+
 	return 0;
 }
