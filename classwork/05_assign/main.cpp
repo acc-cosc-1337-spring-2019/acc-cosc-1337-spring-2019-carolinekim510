@@ -1,5 +1,6 @@
 #include "rectangle.h"
-#include<iostream>
+#include <iostream>
+#include <vector>
 /*
 Create a vector of rectangles
 Add 3 Rectangle classes to the vector:
@@ -13,6 +14,19 @@ Iterate the vector and display the Area for each Rectangle on one line and the t
 */
 int main() 
 {
-	//std::cout << return_val();
-	return 0;
+	std::vector<Rectangle> rectangles;
+
+	Rectangle rectangle1(4, 5);
+	Rectangle rectangle2(10, 10);
+	Rectangle rectangle3(100, 10);
+
+	rectangles.push_back(rectangle1);
+	rectangles.push_back(rectangle2);
+	rectangles.push_back(rectangle3);
+
+	for (auto a : rectangles)
+	{
+		std::cout << a.get_area() << "\n";
+	}
+
 }
