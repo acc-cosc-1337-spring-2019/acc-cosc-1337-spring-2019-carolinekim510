@@ -2,8 +2,12 @@
 #include <iostream>
 #include <vector>
 
-int main() 
+
+int main()
 {
+	
+
+	/*
 	std::vector<BankAccount> accounts;
 
 	BankAccount account(12345689, 500);
@@ -16,6 +20,7 @@ int main()
 	{
 		std::cout << act.get_balance() << "\n";
 	}
+	*/
 
 	return 0;
 }

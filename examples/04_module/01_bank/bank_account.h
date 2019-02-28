@@ -1,6 +1,10 @@
+
+
 class BankAccount 
 {
 public:
+	
+	//BankAccount(); //Overloading constructors
 	BankAccount(int act, double bal);//constructor
 	double get_balance() const;
 	void deposit(double amount);

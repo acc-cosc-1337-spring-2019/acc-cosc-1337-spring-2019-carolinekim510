@@ -11,9 +11,7 @@ public:
 	int get_area() const;
 
 private:
-	int width;
-	int height;
-	int area;
+	int width, height, area;
 	int calculate_area();
 
 };
