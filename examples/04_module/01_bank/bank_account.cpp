@@ -13,10 +13,15 @@ double BankAccount::get_balance() const
 
 void BankAccount::deposit(double amount)
 {
-	if (amount_greater_zero(amount) > 0)
+	if (amount > amount_greater_zero(amount))
 	{
 		balance += amount;
 	}
+}
+
+void BankAccount::deposit(int pin, double amount)
+{
+
 }
 
 void BankAccount::withdraw(double amount)
