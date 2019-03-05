@@ -1,6 +1,9 @@
 #include<string>
 #include<vector>
 
+#ifndef TIC_TAC_TOE_H
+#define TIC_TAC_TOE_H
+
 
 
 class TicTacToe 
@@ -11,13 +14,21 @@ public:
 	void mark_board(int position);
 	std::string get_player() const; // given
 	void display_board() const;
+	std::string get_winner() const;
+
 private:
+	std::string winner;
+	std::vector<std::string> pegs{ 9, " " };
+	std::string next_player; //given
+
+	void set_winner();
 	void set_next_player();
 	bool check_column_win();
 	bool check_row_win();
 	bool check_diagonal_win();
 	void clear_board();
 	bool check_board_full();
-	std::vector<std::string> pegs{ 9, " " };
-	std::string next_player; //given
+
 };
+
+#endif // !TIC_TAC_TOE_H
