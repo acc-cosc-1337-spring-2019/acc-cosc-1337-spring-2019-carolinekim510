@@ -21,7 +21,6 @@ int main()
 	{
 		cout << "Pick first player X or O: ";
 		cin >> a;
-
 		board.start_game(a);
 		
 		while (board.game_over() != true)

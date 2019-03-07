@@ -38,8 +38,6 @@ void TicTacToe::mark_board(int position)
 }
 
 
-
-
 void TicTacToe::set_winner()
 {
 	
@@ -52,6 +50,7 @@ void TicTacToe::set_winner()
 	}
 	
 }
+
 
 std::string TicTacToe::get_winner() const
 {
@@ -90,8 +89,14 @@ void TicTacToe::display_board() const
 		{
 			cout << " |";
 		}
+		else
+		{
+			cout << "\n";
+		}
+
 			cout << pegs[i];
 	}
+	cout << "\n";
 }
 
 
