@@ -42,4 +42,5 @@ int main()
 	} while (choice == 1);
 	manager.display_history();
 
+	system("pause");
 }

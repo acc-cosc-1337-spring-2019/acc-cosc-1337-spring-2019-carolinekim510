@@ -9,7 +9,7 @@ class TicTacToe_Manager
 {
 public:
 
-	TicTacToe_Manager::TicTacToe_Manager(); // constructor
+	TicTacToe_Manager(); // constructor
 	void save_game(const TicTacToe b);
 	void display_history() const;
 
