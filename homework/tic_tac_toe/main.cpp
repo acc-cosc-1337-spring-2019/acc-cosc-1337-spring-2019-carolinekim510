@@ -3,7 +3,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <Windows.h>
 
 using std::cout;
 using std::cin;
@@ -43,5 +42,4 @@ int main()
 	} while (choice == 1);
 	manager.display_history();
 
-	system("pause");
 }
