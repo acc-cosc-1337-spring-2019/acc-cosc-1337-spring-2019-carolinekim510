@@ -1,5 +1,6 @@
-#include<string>
-#include<vector>
+#include <string>
+#include <vector>
+#include <iostream>
 
 #ifndef TIC_TAC_TOE_H
 #define TIC_TAC_TOE_H
@@ -15,6 +16,9 @@ public:
 	std::string get_player() const; // given
 	void display_board() const;
 	std::string get_winner() const;
+	friend std::istream & operator >> (std::istream & in, TicTacToe & b);
+	friend std::ostream & operator << (std::ostream & out, const TicTacToe & b);
+
 
 private:
 	std::string winner;

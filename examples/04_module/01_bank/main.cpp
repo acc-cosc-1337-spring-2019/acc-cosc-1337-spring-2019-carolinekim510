@@ -5,22 +5,24 @@
 
 
 int main()
-{
-	/*
-	BankAccount account (123, 100);
-	BankAccount copy = account;
-	account.deposit(50);  //even there was the deposit, the account will be updated witht he 50 of deposit BUT the *copy* won't.
-	*/
-	
+{	
 	BankAccount account(123456, 500);		//created bank account object acount#: 123456 balance: 500
-	Customer customer (account);
-	
-	//ATM atm(account);
-	
+	Customer customer (account);	
 	ATM atm(customer);
 	atm.display_balance();
+
+	display(account);
+	atm.deposit(50);
+	atm.display_balance();
 	
-	//std::cout << copy.get_balance();
+	BankAccount b(1, 900);
+	BankAccount c = account + b;
+
+	std::cout << "\n";
+	display(c);
+
+	std::cout << c << "\n";
+
 
 	/*
 	std::vector<BankAccount> accounts;
@@ -35,7 +37,12 @@ int main()
 	{
 		std::cout << act.get_balance() << "\n";
 	}
-	*/
+	
 
+	for (auto tic_tac_toe : list)
+	{
+		cou << tic_tac_toe << "\n";
+	}
+	*/
 	return 0;
 }
