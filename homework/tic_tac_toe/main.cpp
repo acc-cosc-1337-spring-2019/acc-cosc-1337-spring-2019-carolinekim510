@@ -24,10 +24,13 @@ int main()
 		
 		while (board.game_over() != true)
 		{
+			/*
 			cout << "\nEnter position for " << board.get_player() << " ";
 			cin >> position;
 			board.mark_board(position);
 			board.display_board();
+			*/
+			board;
 		} 
 
 		if (board.game_over() == true)
@@ -40,7 +43,8 @@ int main()
 		cin >> choice;
 
 	} while (choice == 1);
-	manager.display_history();
+	//manager.display_history();
+	manager;
 
 	system("pause");
 }

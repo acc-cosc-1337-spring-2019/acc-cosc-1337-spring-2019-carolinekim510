@@ -14,10 +14,10 @@ public:
 	void start_game(std::string first_player); // given
 	void mark_board(int position);
 	std::string get_player() const; // given
-	void display_board() const;
+	//void display_board() const;
 	std::string get_winner() const;
-	friend std::istream & operator >> (std::istream & in, TicTacToe & b);
 	friend std::ostream & operator << (std::ostream & out, const TicTacToe & b);
+	friend std::istream & operator >> (std::istream & in, TicTacToe & b);
 
 
 private:

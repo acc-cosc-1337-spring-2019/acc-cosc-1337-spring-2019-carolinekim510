@@ -34,6 +34,7 @@ void TicTacToe_Manager::save_game(const TicTacToe b)
 }
 
 
+/*
 void TicTacToe_Manager::display_history() const
 {
 	for (int i = 0; i < games.size(); i++)
@@ -45,4 +46,19 @@ void TicTacToe_Manager::display_history() const
 	std::cout << "\nO wins: " << o_win;
 	std::cout << "\nTies: " << tie << "\n\n";
 }
+*/
 
+std::ostream & operator << (std::ostream & out, const TicTacToe_Manager & c)
+{
+	for (int i = 0; i < c.save_game.size(); i++)
+	{
+		out << c.display_history;
+	}
+
+	out << "\nX wins: " << c.x_win;
+	out << "\nO wins: " << c.o_win;
+	out << "\nTies: " << c.tie << "\n\n";
+
+	return out;
+
+}
