@@ -12,10 +12,11 @@ public:
 	//BankAccount() = default;
 	//BankAccount(); //Overloading constructors
 	BankAccount(int act, double bal);//constructor
-	double get_balance() const;
+	virtual double get_balance();
 	void deposit(double amount);
 	void deposit(int pin, double amount);
 	void withdraw(double amount);
+	std::vector<Transaction> get_transaction() const;
 	friend void display(const BankAccount& act);
 	friend BankAccount operator +(BankAccount& act1,
 								  const BankAccount& act2);
