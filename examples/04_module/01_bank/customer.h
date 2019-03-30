@@ -2,15 +2,14 @@
 #define CUSTOMER_H
 #include "bank_account.h"
 
-class Customer
+class Customer 
 {
 public:
-	Customer(BankAccount act) : account(act) {}	//constructor
-	//double get_balance() const { return account.get_balance(); }
+	Customer(BankAccount& act) : account(act) {}
 	BankAccount& get_account();
-
 private:
-	BankAccount account;
+	BankAccount& account;
 
 };
+
 #endif // !CUSTOMER_H

@@ -1,15 +1,15 @@
 #ifndef CHECKING_ACCOUNT_H
 #define CHECKING_ACCOUNT_H
-
 #include "bank_account.h"
 
-class CheckingAccount : public BankAccount
+
+class CheckingAccount : public BankAccount 
 {
 public:
-	CheckingAccount(int act, double bal) : 
-		BankAccount(act, bal) {}		//constrctor
+	CheckingAccount(int act, double bal): 
+		BankAccount(act, bal) {}
 	double get_balance();
 
-
 };
-#endif // !1
+
+#endif // !CHECKING_ACCOUNT_H

@@ -2,11 +2,11 @@
 #define SAVINGS_ACCOUNT_H
 #include "bank_account.h"
 
-class SavingsAccount : public BankAccount		//inheritance from bankAccount
+class SavingsAccount : public BankAccount 
 {
 public:
-	SavingsAccount(int act, double bal, float i = .9) : 
-		BankAccount(act, bal), interest_rate(i){}		//constructor from bankAccount(account and balance)
+	SavingsAccount(int act, double bal, float i = .9) :
+		BankAccount(act, bal), interest_rate(i) {	}
 	void add_interest_earned();
 	double get_balance();
 
