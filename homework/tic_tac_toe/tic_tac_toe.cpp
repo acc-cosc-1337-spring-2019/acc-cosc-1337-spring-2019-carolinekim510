@@ -203,6 +203,9 @@ std::ostream & operator<<(std::ostream & out, const TicTacToe & b)
 
 std::istream & operator>>(std::istream & in, TicTacToe & b)
 {
-	in >> b.mark_board;
+	int position;
+	std::cout << "Enter position: ";
+	in >> position;
+	b.mark_board(position);
 	return in;
 }
