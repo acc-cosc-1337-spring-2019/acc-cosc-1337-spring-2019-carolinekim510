@@ -11,6 +11,7 @@ public:
 	Panel(wxWindow* parent);
 	
 private:
+	void on_hello(wxCommandEvent & event);
 
 };
 
