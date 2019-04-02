@@ -35,7 +35,7 @@ void TicTacToe_Manager::save_game(const TicTacToe b)
 
 std::ostream & operator << (std::ostream & out, const TicTacToe_Manager & c)
 {
-	for (int i = 0; i < c.games.size(); i++)
+	for (auto c : c.games)
 	{
 		out << c;
 	}

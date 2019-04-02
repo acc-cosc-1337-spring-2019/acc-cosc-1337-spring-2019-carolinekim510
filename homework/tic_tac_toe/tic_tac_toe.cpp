@@ -76,77 +76,21 @@ std::string TicTacToe::get_player() const
 	return next_player;
 }
 
-/*
-void TicTacToe::display_board() const
-{
-	for (std::size_t i = 0; i < 9; i++)
-	{
-		if (i != 0 && (i % 3 == 0))
-		{
-			cout << "\n";
-		}
-		else if (i % 3 != 0)
-		{
-			cout << " |";
-		}
-		else
-		{
-			cout << "\n";
-		}
-
-			cout << pegs[i];
-	}
-	cout << "\n";
-}
-*/
-
 
 // Win by column if 0,3,6 are equal, 1,4,7 and 2,5,8
 bool TicTacToe::check_column_win()
 {	
-	if (pegs[0] == pegs[3] && pegs[3] == pegs[6] && pegs[6] != " ")
-	{
-		return true;
-	}
-	else if (pegs[1] == pegs[4] && pegs[4] == pegs[7] && pegs[7] != " ")
-	{
-		return true;
-	}
-	else if (pegs[2] == pegs[5] && pegs[5] == pegs[8] && pegs[8] != " ")
-	{
-		return true;
-	}
-		return false;
+	return false;
 }
 
 
 bool TicTacToe::check_row_win()
 {	
-	if (pegs[0] == pegs[1] && pegs[1] == pegs[2] && pegs[2] != " ")
-	{
-		return true;
-	}
-	else if (pegs[3] == pegs[4] && pegs[4] == pegs[5] && pegs[5] != " ")
-	{
-		return true;
-	}
-	else if (pegs[6] == pegs[7] && pegs[7] == pegs[8] && pegs[8] != " ")
-	{
-		return true;
-	}
 	return false;
 }
 
 bool TicTacToe::check_diagonal_win()
 {
-	if (pegs[0] == pegs[4] && pegs[4] == pegs[8] && pegs[8] != " ")
-	{
-		return true;
-	}
-	else if (pegs[2] == pegs[4] && pegs[4] == pegs[6] && pegs[6] != " ")
-	{
-		return true;
-	}
 	return false;
 }
 
@@ -176,7 +120,7 @@ std::ostream & operator<<(std::ostream & out, const TicTacToe & b)
 {
 	out << "\nEnter position for " << b.get_player() << " ";
 
-	for (std::size_t i = 0; i < 9; i++)
+	for (std::size_t i = 0; i < b.pegs.size(); i++)
 	{
 		if (i != 0 && (i % 3 == 0))
 		{
