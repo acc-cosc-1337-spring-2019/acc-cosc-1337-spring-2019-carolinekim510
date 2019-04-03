@@ -10,7 +10,7 @@ public:
 	TicTacToe3() : TicTacToe(3) {}
 
 private:
-	std::vector<std::string> pegs;
+
 	bool check_column_win();
 	bool check_row_win();
 	bool check_diagonal_win();

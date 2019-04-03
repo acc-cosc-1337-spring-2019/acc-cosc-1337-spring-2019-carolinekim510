@@ -1,4 +1,5 @@
 #include "tic_tac_toe.h"
+#include "math.h"
 #include <string>
 #include <iostream>
 #include <vector>

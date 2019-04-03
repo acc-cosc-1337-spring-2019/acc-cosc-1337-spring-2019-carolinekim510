@@ -1,4 +1,6 @@
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
 #include "tic_tac_toe_manager.h"
 #include <iostream>
 #include <vector>
@@ -22,20 +24,27 @@ int main()
 		cin >> size;
 		cout << "Pick first player X or O: ";
 		cin >> a;
-		TicTacToe board(size);		//Can't creat the board yet becuase the user hasn't put which board they are going to play
-									//It's now created the object with excepting parameter called size
-
-		board.start_game(a);
+		TicTacToe* board;	
 		
-		while (board.game_over() != true)
+		if (size == 3)
 		{
-			cout << board;
-			cin >> board;
+			board = new TicTacToe3();
+		}
+		else
+			board = new TicTacToe4();
+
+
+		board->start_game(a);
+		
+		while (board->game_over() != true)
+		{
+			cout << *board;
+			cin >> *board;
 		} 
 
-		if (board.game_over() == true)
+		if (board->game_over() == true)
 		{
-			manager.save_game(board);
+			manager.save_game(*board);
 		}
 		cout << "\nEnter 1 to Play again, any other key to exit ";
 		cin >> choice;
