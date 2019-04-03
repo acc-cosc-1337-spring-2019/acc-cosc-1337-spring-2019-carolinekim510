@@ -120,15 +120,19 @@ bool TicTacToe::check_board_full()
 std::ostream & operator<<(std::ostream & out, const TicTacToe & b)
 {
 	out << "\nEnter position for " << b.get_player() << " ";
+	std::cout << "\n";
 
 	for (std::size_t i = 0; i < b.pegs.size(); i+= sqrt(b.pegs.size()))
 	{
 		std::cout << b.pegs[i] << "|" << b.pegs[i + 1] << "|" << b.pegs[i + 2];
+		
 
 		if (b.pegs.size() == 16)
 		{
 			std::cout << "|" << b.pegs[i + 3];
+
 		}
+		std::cout << "\n";
 	}
 	out << "\n";
 

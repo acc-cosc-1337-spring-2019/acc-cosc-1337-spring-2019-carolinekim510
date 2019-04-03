@@ -16,7 +16,7 @@ int main()
 	int choice;
 	int position;
 	string a;
-	int size;		//to pick a board
+	int size;
 
 	do
 	{	
@@ -50,7 +50,6 @@ int main()
 		cin >> choice;
 
 	} while (choice == 1);
-	//manager.display_history();
 	cout << manager;
 
 	system("pause");

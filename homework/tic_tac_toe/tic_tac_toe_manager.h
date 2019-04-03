@@ -8,11 +8,9 @@
 class TicTacToe_Manager
 {
 public:
-
 	TicTacToe_Manager(); // constructor
 	void save_game(const TicTacToe b);
 	friend std::ostream & operator << (std::ostream & out, const TicTacToe_Manager & c);
-
 
 private:
 	int o_win;

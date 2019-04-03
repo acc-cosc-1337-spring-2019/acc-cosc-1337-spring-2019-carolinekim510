@@ -44,6 +44,7 @@ bool TicTacToe4::check_row_win()
 	return false;
 }
 
+
 bool TicTacToe4::check_diagonal_win()
 {
 	if (pegs[0] == pegs[5] && pegs[5] == pegs[10] && pegs[10] == pegs[15] && pegs[15] != " ")
