@@ -121,26 +121,16 @@ std::ostream & operator<<(std::ostream & out, const TicTacToe & b)
 {
 	out << "\nEnter position for " << b.get_player() << " ";
 
-	for (std::size_t i = 0; i < b.pegs.size(); i++)
+	for (std::size_t i = 0; i < b.pegs.size(); i+= sqrt(b.pegs.size()))
 	{
-		if (i != 0 && (i % 3 == 0))
-		{
-			out << "\n";
-		}
-		else if (i % 3 != 0)
-		{
-			out << " |";
-		}
-		else
-		{
-			out << "\n";
-		}
+		std::cout << b.pegs[i] << "|" << b.pegs[i + 1] << "|" << b.pegs[i + 2];
 
-		out << b.pegs[i];
+		if (b.pegs.size() == 16)
+		{
+			std::cout << "|" << b.pegs[i + 3];
+		}
 	}
 	out << "\n";
-
-	//out << b.display_board;
 
 	return out;
 }
