@@ -39,12 +39,13 @@ wxBoxSizer * Panel::get_box_sizer()
 	auto balance_label = new wxStaticText(this, wxID_ANY, wxString("Balance: "),
 		wxDefaultPosition, wxSize(70, -1));
 	vbox1->Add(balance_label, 0);
-	
+
+	/*Balance Text, print the bank balance*/
 	balance_text = new wxStaticText(this, wxID_ANY, wxString(std::to_string
 		(account->get_balance())), wxDefaultPosition, wxSize(70, -1));
 	vbox1->Add(balance_text, 0);
 
-	/*Radio button*/
+	/*Radio button (Inside of the TRANS box, two radio box for Depost/Withdraw*/
 	wxString trans_type_choices[]{ wxT("Deposit"), wxT("Withdraw") };
 
 	trans_type_radio = new wxRadioBox(this, -1, wxT("Trans Type"), wxDefaultPosition, wxDefaultSize,
