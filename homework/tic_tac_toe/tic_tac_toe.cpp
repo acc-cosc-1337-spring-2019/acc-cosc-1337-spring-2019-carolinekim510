@@ -78,23 +78,6 @@ std::string TicTacToe::get_player() const
 }
 
 
-// Win by column if 0,3,6 are equal, 1,4,7 and 2,5,8
-bool TicTacToe::check_column_win()
-{	
-	return false;
-}
-
-
-bool TicTacToe::check_row_win()
-{	
-	return false;
-}
-
-bool TicTacToe::check_diagonal_win()
-{
-	return false;
-}
-
 void TicTacToe::clear_board()
 {
 	for (std::size_t i = 0; i < pegs.size(); i++)
@@ -102,6 +85,7 @@ void TicTacToe::clear_board()
 		pegs[i] = " ";
 	}
 }
+
 
 
 bool TicTacToe::check_board_full()

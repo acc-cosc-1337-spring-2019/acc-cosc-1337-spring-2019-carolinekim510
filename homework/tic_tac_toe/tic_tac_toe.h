@@ -23,9 +23,9 @@ public:
 
 protected:
 	vector<string> pegs;
-	virtual bool check_column_win();
-	virtual bool check_row_win();
-	virtual bool check_diagonal_win();
+	virtual bool check_column_win() = 0;		//adding = 0 to make pure virtual function
+	virtual bool check_row_win() = 0;
+	virtual bool check_diagonal_win() = 0;
 
 private:
 	string winner;

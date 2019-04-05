@@ -12,11 +12,13 @@ using std::string;
 
 int main() 
 {
-	TicTacToe_Manager manager;
+	std::unique_ptr<TicTacToe_Manager> manager = std::make_unique<TicTacToe_Manager>();
 	int choice;
-	int position;
+	//int position;
 	string a;
 	int size;
+
+	std::unique_ptr<TicTacToe> board= std::make_unique<TicTacToe>();;
 
 	do
 	{	
@@ -24,16 +26,9 @@ int main()
 		cin >> size;
 		cout << "Pick first player X or O: ";
 		cin >> a;
-		TicTacToe* board;	
+			
 		
-		if (size == 3)
-		{
-			board = new TicTacToe3();
-		}
-		else
-			board = new TicTacToe4();
-
-
+		board = manager->get_game(size);
 		board->start_game(a);
 		
 		while (board->game_over() != true)
@@ -44,13 +39,13 @@ int main()
 
 		if (board->game_over() == true)
 		{
-			manager.save_game(*board);
+			manager->save_game(std::move(board));
 		}
 		cout << "\nEnter 1 to Play again, any other key to exit ";
 		cin >> choice;
 
 	} while (choice == 1);
-	cout << manager;
+	cout << *manager;
 
 	system("pause");
 }
