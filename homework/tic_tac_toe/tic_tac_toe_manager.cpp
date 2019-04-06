@@ -1,43 +1,13 @@
 #include "tic_tac_toe_manager.h"
-#include "tic_tac_toe.h"
-#include "tic_tac_toe_3.h"
-#include "tic_tac_toe_4.h"
-#include <iostream>
+#include"tic_tac_toe_3.h"
+#include"tic_tac_toe_4.h"
+
 //Write class function implementations here
 
 
-TicTacToe_Manager::TicTacToe_Manager()
+std::unique_ptr<TicTacToe>TicTacToeManager::get_game(GameType game_type)
 {
-	o_win = 0;
-	tie = 0;
-	x_win = 0;
-}
-
-
-void TicTacToe_Manager::update_winner_count(std::string winner) 
-{
-	if (winner == "X")
-	{
-		x_win++;
-	}
-	else if (winner == "O")
-	{
-		o_win++;
-	}
-	else
-		tie++;
-}
-
-
-void TicTacToe_Manager::save_game(std::unique_ptr<TicTacToe>& b)
-{
-	update_winner_count(b->get_winner());
-	games.push_back(std::move(b));
-}
-
-std::unique_ptr<TicTacToe> TicTacToe_Manager::get_game(int game_type)
-{
-	if (game_type == 3)
+	if (game_type == GameType::three)
 	{
 		return std::make_unique<TicTacToe3>();
 	}
@@ -45,20 +15,38 @@ std::unique_ptr<TicTacToe> TicTacToe_Manager::get_game(int game_type)
 	{
 		return std::make_unique<TicTacToe4>();
 	}
-	return std::unique_ptr<TicTacToe>();
+}
+void TicTacToeManager::save_game(std::unique_ptr<TicTacToe>& game)
+{
+	update_winner_count(game->get_winner());
+	games.push_back(std::move(game));
+}
+void TicTacToeManager::update_winner_count(std::string winner)
+{
+	if (winner == "C") 
+	{
+		ties++;
+	}
+	else if (winner == "X") 
+	{
+		x_win++;
+	}
+	else if (winner == "O") 
+	{
+		o_win++;
+	}
 }
 
-std::ostream & operator << (std::ostream & out, const TicTacToe_Manager & c)
+std::ostream & operator<<(std::ostream & out, const TicTacToeManager & t)
 {
-	for (auto& c : c.games)
+	for (auto& game : t.games)
 	{
-		out << *c;
+		out << *game;
 	}
 
-	out << "\nX wins: " << c.x_win;
-	out << "\nO wins: " << c.o_win;
-	out << "\nTies: " << c.tie << "\n\n";
+	out << "X wins: " << t.x_win << "\n";
+	out << "O wins: " << t.o_win << "\n";
+	out << "Ties: " << t.ties << "\n";
 
 	return out;
-
 }
