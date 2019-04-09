@@ -72,6 +72,11 @@ std::string TicTacToe::get_winner() const
 	return winner;
 }
 
+const std::vector<std::string>& TicTacToe::get_pegs()
+{
+	return pegs;
+}
+
 
 void TicTacToe::set_winner() 
 {
@@ -84,6 +89,9 @@ void TicTacToe::set_winner()
 		winner = next_player;
 	}
 }
+
+
+
 
 std::ostream & operator<<(std::ostream & out, const TicTacToe & t)
 {
