@@ -5,7 +5,17 @@
 
 namespace acc
 {
+	class Rectangle : public Shape
+	{
+	public:
+		Rectangle(wxDC* dc, Point p, int w, int h):Shape(dc), point(p), width(w), height(h) {}
+		void draw() override;
 
+	private:
+		Point point;
+		int width;
+		int height;
+	};
 
 }
 
