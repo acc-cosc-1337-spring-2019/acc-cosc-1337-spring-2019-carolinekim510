@@ -1,5 +1,13 @@
 #include "tic_tac_toe_3.h"
 
+
+//NEW added
+TicTacToe3::TicTacToe3(std::vector<std::string> s) : TicTacToe(GameType::three)
+{
+	determine_winner();
+}
+
+
 /*
 Win by column if and return true if
 0,3, and 6 are equal
@@ -8,6 +16,7 @@ Win by column if and return true if
 else
 false
 */
+
 bool TicTacToe3::check_column_win()
 {
 	for (std::size_t i = 0; i < 3; ++i)

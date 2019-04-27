@@ -11,7 +11,15 @@ writing and append.
 */
 void TicTacToeData::save_game(const vector<string>& pegs)
 {
+	fstream file(file_name, std::ios::out | std::ios::app);
 
+	for (auto v : pegs)
+	{
+		file << v;
+		file << "\n";
+	}
+
+	file.close();
 }
 
 /*
@@ -40,9 +48,42 @@ Create unique ptr of TicTacToe boards
 
 		return the  vector  of TicTacToe
 */
+
+
+//------------------------------------------------------------check with tutor
 vector<unique_ptr<TicTacToe>> TicTacToeData::get_games()
 {
 	vector<unique_ptr<TicTacToe>> games;
 
+	std::ifstream file_name;
+	std::string line;
+
+	if (file_name.is_open())
+	{
+		while (getline(file_name, line))
+		{
+			//vector of string
+			vector<string> s;
+
+			for (auto ch : line)
+			{
+				s.push_back(std::string(1, ch));
+			}
+
+			unique_ptr<TicTacToe> board;
+			if (s.size() == 9)
+			{
+				board = std::make_unique<TicTacToe3>(s);
+			}
+			else
+			{
+				board = std::make_unique<TicTacToe4>(s);
+			}
+
+			games.push_back(board);
+		}
+	}
+
+	file_name.close();
 	return games;
 }

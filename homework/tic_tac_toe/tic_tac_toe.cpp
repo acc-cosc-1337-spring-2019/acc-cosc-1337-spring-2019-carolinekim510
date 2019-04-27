@@ -34,6 +34,45 @@ void TicTacToe::mark_board(int position)
 	}
 }
 
+
+//NEW added
+std::string TicTacToe::determine_winner()
+{
+	if (check_board_full() == true)
+	{
+		return "C";
+	}
+	else
+	{
+		for (auto v : pegs)
+		{
+			int x_win = 0;
+			int o_win = 0;
+
+			//check to see who is the winner
+			if (v == "X")
+			{
+				x_win++;
+			}
+			else if (v == "O")
+			{
+				o_win++;
+			}
+
+			//compare counts of the winner
+			if (x_win > o_win)
+			{
+				return "X";
+			}
+			else
+			{
+				return "O";
+			}
+		}
+	}
+	return std::string();
+}
+
 void TicTacToe::set_next_player()
 {
 	if (next_player == "X") 

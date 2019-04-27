@@ -30,10 +30,19 @@ void TicTacToeManager::get_winner_totals(int & x, int & o, int & c)
 }
 
 
+//NEW added
+TicTacToeManager::TicTacToeManager()
+{
+	games = data.get_games();
+	set_scores();
+}
+
+
 void TicTacToeManager::save_game(std::unique_ptr<TicTacToe>& game)
 {
 	update_winner_count(game->get_winner());
 	games.push_back(std::move(game));
+	data.save_game(game->get_pegs());
 }
 
 
@@ -51,6 +60,27 @@ void TicTacToeManager::update_winner_count(std::string winner)
 	else if (winner == "O") 
 	{
 		o_win++;
+	}
+}
+
+
+//NEW added
+void TicTacToeManager::set_scores()
+{
+	for (auto & a : games)
+	{
+		if (a->get_winner() == "X")
+		{
+			x_win++;
+		}
+		else if (a->get_winner() == "O")
+		{
+			o_win++;
+		}
+		else
+		{
+			ties++;
+		}
 	}
 }
 

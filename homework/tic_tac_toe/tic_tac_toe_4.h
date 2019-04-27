@@ -6,6 +6,7 @@ class TicTacToe4 : public TicTacToe
 {
 public:
 	TicTacToe4() : TicTacToe(GameType::four) {}
+	TicTacToe4(std::vector<std::string> s);
 
 private:
 	bool check_column_win();

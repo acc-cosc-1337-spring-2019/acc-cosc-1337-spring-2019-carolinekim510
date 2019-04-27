@@ -15,6 +15,7 @@ class TicTacToe
 {
 public:
 	TicTacToe(GameType game_type) : pegs(game_type * game_type, " ") {}
+	TicTacToe(std::vector<std::string> s) :pegs(s) {}
 	void start_game(std::string first_player);
 	std::string get_player() const;
 	bool game_over();
@@ -31,6 +32,7 @@ protected:
 	virtual bool check_column_win()=0;
 	virtual bool check_row_win()=0;
 	virtual bool check_diagonal_win()=0;
+	std::string determine_winner();
 
 private:
 	std::string next_player;
